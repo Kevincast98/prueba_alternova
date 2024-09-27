@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "b2f69e85-821f-4fb7-8453-12041e6bdc5d",
+		"name": "Prueba_Alternova",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28694979"
+	},
+	"item": [
+		{
+			"name": "Servicios",
+			"item": [
+				{
+					"name": "Obtener Pelicula aleatoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFAZ21haWwuY29tIiwiZXhwIjoxNzI3NDg4MDMwLCJpYXQiOjE3Mjc0NTIwMzB9.J47FCzhauOZhrAqupwG-cQsFScjgBsZqvNBh9QtgO6I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/peliculas-series/aleatoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"peliculas-series",
+								"aleatoria"
+							]
+						},
+						"description": "# PELICULAS ALEATORIAS\n\nEndpoint: Generar peliculas aleatorias\n\nDescripción:  \nEste endpoint permite obtener la informacion de una pelicula aleatoria existente en la base de datos, retorna los siguientes datos:\n\n- Id (PK).\n    \n- Nombre (String)\n    \n- Tipo (String)\n    \n- NumVisualizaciones (int)\n    \n- Puntaje (double)\n    \n\nURL:  \n**GET** [http://localhost:8082/api/peliculas-series/aleatoria](http://localhost:8082/api/peliculas-series/aleatoria)\n\nCuerpo de la solicitud:  \nNo se requiere ningún dato en el cuerpo de la solicitud.\n\nEncabezados:  \nNo se requieren encabezados adicionales para esta solicitud.\n\nRespuesta exitosa:  \nCódigo de estado: 200 OK\n\nErrores y códigos de estado:\n\n- 404 Not Found: Se devuelve cuando no se encuentra una pelicula. El cuerpo de la respuesta contendrá un mensaje de error correspondiente.\n    \n- 401 Unauthorized: Se devuelve cuando no se proporcionan credenciales válidas de autenticación en el encabezado de la solicitud.\n    \n\nConsideraciones adicionales:\n\n- Autenticación: Se requiere autenticación para acceder a este endpoint. El encabezado de autenticación debe incluir las credenciales válidas del usuario.\n    \n- Asegúrate de utilizar los códigos de estado y el formato de respuesta especificados para un manejo adecuado de la respuesta del servicio.\n    \n- Ajusta el código y los nombres de los modelos y vistas según tu implementación real.\n    \n- Considerar en la busqueda por parametros, inicializarlos con \"?\" y posterior pasar su respectivo parametro"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Peliculas o series Ordenadas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFAZ21haWwuY29tIiwiZXhwIjoxNzI3NDg5OTUwLCJpYXQiOjE3Mjc0NTM5NTB9.UVaVMyb-87wQJYg1v6-DITGGhpdRK-wnGFBMcXK1LpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/peliculas-series",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"peliculas-series"
+							],
+							"query": [
+								{
+									"key": "ordenarPor",
+									"value": "puntaje",
+									"disabled": true
+								}
+							]
+						},
+						"description": "## PELICULAS O SERIES ORDENADAS\n\nEndpoint: Obtener peliculas o series ordenadas\n\nDescripción:  \nEste endpoint permite obtener la informacion de una pelicula aleatoria existente en la base de datos y la ordena usan la key \"ordenarPor\" el cual puede recibir varios valores, los cuales son:\n\n- nombre\n    \n- tipo\n    \n- genero\n    \n- puntaje\n    \n\nURL:  \n**GET** [http://localhost:8082/api/peliculas-series](http://localhost:8082/api/peliculas-series)\n\nCuerpo de la solicitud:  \nNo se requiere ningún dato en el cuerpo de la solicitud.\n\nEncabezados:  \nNo se requieren encabezados adicionales para esta solicitud.\n\nRespuesta exitosa:  \nCódigo de estado: 200 OK\n\nErrores y códigos de estado:\n\n- 404 Not Found: Se devuelve cuando no se encuentra una pelicula. El cuerpo de la respuesta contendrá un mensaje de error correspondiente.\n    \n- 401 Unauthorized: Se devuelve cuando no se proporcionan credenciales válidas de autenticación en el encabezado de la solicitud.\n    \n\nConsideraciones adicionales:\n\n- Autenticación: Se requiere autenticación para acceder a este endpoint. El encabezado de autenticación debe incluir las credenciales válidas del usuario.\n    \n- Asegúrate de utilizar los códigos de estado y el formato de respuesta especificados para un manejo adecuado de la respuesta del servicio.\n    \n- Ajusta el código y los nombres de los modelos y vistas según tu implementación real.\n    \n- Considerar en la busqueda por parametros, inicializarlos con \"?\" y posterior pasar su respectivo parametro"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener peliculas o series por filtros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFAZ21haWwuY29tIiwiZXhwIjoxNzI3NDg5OTUwLCJpYXQiOjE3Mjc0NTM5NTB9.UVaVMyb-87wQJYg1v6-DITGGhpdRK-wnGFBMcXK1LpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/peliculas-series/filtro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"peliculas-series",
+								"filtro"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "tipo",
+									"value": "Serie",
+									"disabled": true
+								},
+								{
+									"key": "genero",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "## PELICULAS O SERIES POR FILTROS\n\nEndpoint: Obtener peliculas o series por filtros\n\nDescripción:  \nEste endpoint permite obtener la informacion de una pelicula aleatoria existente en la base de datos, teniendo en cuenta diferentes filtros que se pueden aplicar:\n\n- nombre\n    \n- tipo\n    \n- genero\n    \n\nURL:  \n**GET** [http://localhost:8082/api/peliculas-series/filtro](http://localhost:8082/api/peliculas-series/filtro)\n\nCuerpo de la solicitud:  \nNo se requiere ningún dato en el cuerpo de la solicitud.\n\nEncabezados:  \nNo se requieren encabezados adicionales para esta solicitud.\n\nRespuesta exitosa:  \nCódigo de estado: 200 OK\n\nErrores y códigos de estado:\n\n- 404 Not Found: Se devuelve cuando no se encuentra una pelicula. El cuerpo de la respuesta contendrá un mensaje de error correspondiente.\n    \n- 401 Unauthorized: Se devuelve cuando no se proporcionan credenciales válidas de autenticación en el encabezado de la solicitud.\n    \n\nConsideraciones adicionales:\n\n- Autenticación: Se requiere autenticación para acceder a este endpoint. El encabezado de autenticación debe incluir las credenciales válidas del usuario.\n    \n- Asegúrate de utilizar los códigos de estado y el formato de respuesta especificados para un manejo adecuado de la respuesta del servicio.\n    \n- Ajusta el código y los nombres de los modelos y vistas según tu implementación real.\n    \n- Considerar en la busqueda por parametros, inicializarlos con \"?\" y posterior pasar su respectivo parametro"
+					},
+					"response": []
+				},
+				{
+					"name": "Marcar Pelicula o serie como vista",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFAZ21haWwuY29tIiwiZXhwIjoxNzI3NDg4MDMwLCJpYXQiOjE3Mjc0NTIwMzB9.J47FCzhauOZhrAqupwG-cQsFScjgBsZqvNBh9QtgO6I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/peliculas-series/4/vista",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"peliculas-series",
+								"4",
+								"vista"
+							]
+						},
+						"description": "## MARCAR PELICULA O SERIE COMO VISTA\n\nEndpoint: Marcar pelicula o serie como vista\n\nDescripción:  \nEste endpoint permite marcar una pelicula o serio por medio de su ID como vista, cada vez que se marca como vista aumenta (+1) el numero de visualizaciones y de igual el atributo vista cambia a \"true\", ya que por defecto viene en \"false\".\n\nURL:  \n**POST** [http://localhost:8082/api/peliculas-series/{ID}/vista](http://localhost:8082/api/peliculas-series/4/vista)\n\nCuerpo de la solicitud:  \nNo se requiere ningún dato en el cuerpo de la solicitud.\n\nEncabezados:  \nNo se requieren encabezados adicionales para esta solicitud.\n\nRespuesta exitosa:  \nCódigo de estado: 200 OK\n\nErrores y códigos de estado:\n\n- 404 Not Found: Se devuelve cuando no se encuentra una pelicula. El cuerpo de la respuesta contendrá un mensaje de error correspondiente.\n    \n- 401 Unauthorized: Se devuelve cuando no se proporcionan credenciales válidas de autenticación en el encabezado de la solicitud.\n    \n\nConsideraciones adicionales:\n\n- Autenticación: Se requiere autenticación para acceder a este endpoint. El encabezado de autenticación debe incluir las credenciales válidas del usuario.\n    \n- Asegúrate de utilizar los códigos de estado y el formato de respuesta especificados para un manejo adecuado de la respuesta del servicio.\n    \n- Ajusta el código y los nombres de los modelos y vistas según tu implementación real.\n    \n- Considerar en la busqueda por parametros, inicializarlos con \"?\" y posterior pasar su respectivo parametro"
+					},
+					"response": []
+				},
+				{
+					"name": "Puntuar Pelicula",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFAZ21haWwuY29tIiwiZXhwIjoxNzI3NDg4MDMwLCJpYXQiOjE3Mjc0NTIwMzB9.J47FCzhauOZhrAqupwG-cQsFScjgBsZqvNBh9QtgO6I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/peliculas-series/4/puntuar?puntaje=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"peliculas-series",
+								"4",
+								"puntuar"
+							],
+							"query": [
+								{
+									"key": "puntaje",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"password\": 1234,\r\n   \"username\": \"prueba@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "# LOGIN\n\nEndpoint: Login\n\nDescripción:  \nEste endpoint permite generar JWT para loguearse y consumir lo servicios de la API:\n\nURL:  \n**GET** [http://localhost:8082/auth/login](http://localhost:8082/auth/login)\n\nCuerpo de la solicitud:\n\n- \"password\": contraseña para iniciar sesion\n    \n- \"username\": usuario para inciar sesion\n    \n\nEncabezados:  \nNo se requieren encabezados adicionales para esta solicitud.\n\nRespuesta exitosa:  \nCódigo de estado: 200 OK\n\nErrores y códigos de estado:\n\n- 401 Unauthorized: Se devuelve cuando no se proporcionan credenciales válidas de autenticación en el encabezado de la solicitud.\n    \n\nConsideraciones adicionales:\n\n- Los usuarios se deben crear por base de datos, la contraseña que se se asocian a un usuario deben ser encriptados, en esta caso use Bcrypt para encriptar la contraseña al momento de ingresar un nuevo usuario."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
